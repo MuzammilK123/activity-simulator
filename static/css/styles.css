@@ -1,0 +1,239 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Reset some basic elements */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Light background */
+    color: #2d3748; /* Dark text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    margin: 0; /* Ensure no default margins */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: #2d3748; /* Dark header background */
+    color: #e2e8f0; /* Light text color */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    font-size: 16px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #e2e8f0; /* Light text color */
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #cbd5e0; /* Slightly lighter text color on hover */
+}
+
+.hero {
+    background-color: #2d3748; /* Dark hero background */
+    color: #e2e8f0;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero .cta-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.hero .cta-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.main-content {
+    background-color: #f3f4f6; /* Light background */
+    padding: 40px 0;
+}
+
+.upload-section, .paste-json-section {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.search-section {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+button {
+    padding: 12px;
+    border: 1px solid #cbd5e0; /* Lighter border */
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+input[type="text"] {
+    flex: 1; /* Take remaining space */
+    margin-right: 10px;
+    background-color: #edf2f7; /* Lighter background */
+    color: #2d3748; /* Dark text color */
+}
+
+input[type="text"]::placeholder {
+    color: #a0aec0; /* Placeholder text color */
+}
+
+button {
+    background-color: #2d3748; /* Dark background */
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #1a202c; /* Darker background on hover */
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.results-container {
+    margin-top: 20px;
+}
+
+.results-container h2 {
+    color: #2d3748; /* Dark text color */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+ul#resultsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#resultsList li {
+    background-color: #edf2f7; /* Lighter background for list items */
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+ul#resultsList li:hover {
+    background-color: #e2e8f0; /* Lighter background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle buttons styling */
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.toggle-buttons button {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-buttons button.upload {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.toggle-buttons button.paste {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+.toggle-buttons button.active {
+    background-color: #0056b3; /* Darker blue */
+}
