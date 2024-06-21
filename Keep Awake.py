@@ -98,7 +98,7 @@ def start():
     # Run the keep_awake function in a separate thread to avoid blocking
     threading.Thread(target=keep_awake, args=(actions, interval, time_cap)).start()
     
-    return jsonify({'message': 'Activity started!'})
+    return jsonify({'message': 'Automation started!'})
 
 if __name__ == '__main__':
     app.run(debug=True)
