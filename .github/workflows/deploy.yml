@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change this to your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install  # Or yarn install, depending on your setup
+
+      - name: Build
+        run: npm run build  # Adjust this command to build your project
+
+      - name: Deploy to GitHub Pages
+        run: |
+          mkdir -p docs
+          cp -r templates/* docs/
+          # Optional: You may need to adjust the above command based on your project structure
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs
+          git commit -m "Deploy to GitHub Pages"
+          git push origin main
